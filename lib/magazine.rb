@@ -1,11 +1,10 @@
-class magazine
+class Magazine
     attr_accessor :name, :category
     def initialize (name, category)
         @name = name
         @category = category
         @@all << self
     end
-
 
     @@all = []
 
@@ -17,7 +16,7 @@ class magazine
         Article.all.select { |article| article.magazine == self }.map { |article| article.author }
     end
 
-    def find_by_name(name)
+    def self.find_by_name(name)
         @@all.find { |magazine| magazine.name == name }
     end
 

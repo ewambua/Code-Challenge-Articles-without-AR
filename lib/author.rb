@@ -5,7 +5,6 @@ class Author
         @name = name
     end
 
-
     def articles
       Article.all.select { |article| article.author == self }
     end
